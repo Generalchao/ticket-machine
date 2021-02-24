@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>嘉定公会取票机</title>
+	<meta charset="utf-8">
+	<!-- <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0"> -->
+	<!-- 引入样式文件 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.12/lib/index.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- 引入 Vue 和 Vant 的 JS 文件 -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vant@2.12/lib/vant.min.js"></script>
+
+	<style>
+</style>
+</head>
+<body>
+	<div  class="content_box" id="app">
+		<van-swipe :autoplay="5000">
+		  <van-swipe-item v-for="(image, index) in images" :key="index">
+		    <img class="movie_img" :src="image" />
+		  </van-swipe-item>
+		</van-swipe>
+
+		<div class="action_area">
+			<van-button round type="info" color="#F65656" class="btn" @click="showPopup">取票2</van-button>
+			<p class="name">上海嘉定区工人文化宫</p>
+			<p class="phone">服务热线：1010-1010</p>
+		</div>
+
+		<van-popup v-model="show"  position="bottom" :style="{ height: '60%' }"/>
+		  <div class="action_popup_header">
+		  	<div class="close_btn" @click="hidePopup"><img src="img/back.svg">返回首页</div>
+		  	<p class="name2">嘉定工人文化宫</p>
+		  </div>
+		  <van-row type="flex" justify="center"> 
+		  	<van-col span="8">
+		  		<p class="title">方式一：</p>
+		  		<p class="sub_title">扫描二维码取票</p>
+		  		<img class="scan_img" src="img/展示扫描区@2x.png">
+		  	</van-col>
+		  	<van-col span="14" id="#app2">
+		  		<p class="title">方式二：</p>
+		  		<p class="sub_title">手动输入取票</p>
+		  		<!-- <van-field
+				  readonly
+				  clickable
+				  :value="value"
+				  @touchstart.native.stop="show-number-keyboard = true" 
+				/> -->
+
+				<div >
+				  <van-field 
+				  readonly clickable :value="value" placeholder="请输入用户名" />
+				  </div>
+
+				<van-number-keyboard
+				  v-model="value"
+				  :show="show2"
+				/>
+		  	</van-col>
+		  </van-row>
+
+
+		</van-popup>
+
+
+	</div>
+
+
+</body>
+
+
+<script type="text/javascript">
+
+	new Vue({
+		el:'#app',
+	    data() {
+		    return {
+		      images: [
+		        'img/lihuanying@2x.jpg',
+		        'img/tangrenjie@2x.jpg',
+		      ],
+		      show:false,
+		      show2:true,
+		      value:'',
+		    };
+		  },
+
+		methods: {
+		showPopup() {
+		  this.show = true;
+		},
+		hidePopup() {
+		  this.show = false;
+		},
+		},
+
+		});
+
+
+
+
+</script>
+</html>
