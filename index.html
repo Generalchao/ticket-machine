@@ -11,6 +11,7 @@
 	<!-- 引入 Vue 和 Vant 的 JS 文件 -->
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vant@2.12/lib/vant.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@vant/touch-emulator"></script>
 
 	<style>
 </style>
@@ -24,12 +25,12 @@
 		</van-swipe>
 
 		<div class="action_area">
-			<van-button round type="info" color="#F65656" class="btn" @click="showPopup">取票2</van-button>
+			<van-button round type="info" color="#F65656" class="btn" @click="showPopup">取票</van-button>
 			<p class="name">上海嘉定区工人文化宫</p>
 			<p class="phone">服务热线：1010-1010</p>
 		</div>
 
-		<van-popup v-model="show"  position="bottom" :style="{ height: '60%' }"/>
+		<van-popup v-model="show"  position="bottom" :style="{ height: '55%' }"/>
 		  <div class="action_popup_header">
 		  	<div class="close_btn" @click="hidePopup"><img src="img/back.svg">返回首页</div>
 		  	<p class="name2">嘉定工人文化宫</p>
@@ -43,21 +44,18 @@
 		  	<van-col span="14" id="#app2">
 		  		<p class="title">方式二：</p>
 		  		<p class="sub_title">手动输入取票</p>
-		  		<!-- <van-field
-				  readonly
-				  clickable
-				  :value="value"
-				  @touchstart.native.stop="show-number-keyboard = true" 
-				/> -->
 
 				<div >
-				  <van-field 
-				  readonly clickable :value="value" placeholder="请输入用户名" />
-				  </div>
+			  		<p class="title">兑换码</p>
+					<van-field readonly clickable :value="value"/>
+				</div>
 
 				<van-number-keyboard
 				  v-model="value"
 				  :show="show2"
+				  theme="custom"
+				  extra-key="."
+				  close-button-text="完成"
 				/>
 		  	</van-col>
 		  </van-row>
