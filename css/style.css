@@ -7,7 +7,7 @@
 .action_area .phone{color: #666;font-size: 32px;line-height: 44px;}
 
 .action_popup_header{background-color: #fff;height: 130px;border-bottom: 1px solid #C4C4C4;display: flex;}
-.action_popup_header .close_btn{width: 260px;height: 130px;border-right:1px solid #C4C4C4; font-size: 40px;line-height: 130px;justify-content: center;
+.action_popup_header .close_btn{width: 300px;height: 130px;border-right:1px solid #C4C4C4; font-size: 40px;line-height: 130px;justify-content: center;
 align-items: center;display: flex;cursor: pointer;}
 .action_popup_header .name2{flex: 1;text-align: right;font-size: 44px;padding-right: 50px;font-weight: 600;color: #F65656;line-height: 130px;}
 
@@ -16,10 +16,10 @@ align-items: center;display: flex;cursor: pointer;}
 .scan_img{width: 73%;}
 .van-number-keyboard{position: initial;}
 
-.van-cell{border:1px solid #e0e0e0;border-radius: 8px;font-size: 32px;line-height: 48px;margin-bottom: 28px;margin-top: 14px;}
-.van-key{font-size: 32px;height:80px; }
+.van-cell{border:1px solid #e0e0e0;border-radius: 8px;font-size: 32px;line-height: 68px;margin-bottom: 28px;margin-top: 14px;}
+.van-key{font-size: 32px;height:86px; border: 1px solid #e6e6e6;box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);}
 .van-key__wrapper{padding:0 16px 16px 0;}
 .van-key.van-key--large{height: auto;}
 .van-key--large{right: 16px;bottom: 16px;}
-.van-number-keyboard{padding-bottom: 0;}
-.van-number-keyboard__body{padding:16px 0 0 16px;}
+.van-number-keyboard{padding-bottom: 0;background-color: transparent;}
+.van-number-keyboard__body{padding:0;}
