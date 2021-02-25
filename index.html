@@ -38,7 +38,7 @@
 
 
 		  <!-- 扫描二维码+手动输入操作内容 -->
-		  <van-row type="flex" justify="center" v-show="see"> 
+		  <van-row type="flex" justify="center" v-show="action"> 
 		  	<van-col span="8">
 		  		<p class="title">方式一：</p>
 		  		<p class="sub_title">扫描二维码取票</p>
@@ -59,7 +59,7 @@
 				  theme="custom"
 				  extra-key="."
 				  close-button-text="完成"
-				  @blur="onConfirm"
+				  @close="onConfirm"
 				/>
 		  	</van-col>
 		  </van-row>
@@ -96,7 +96,7 @@
 		      show:false,
 		      show2:true,
 		      value:'',
-		      see:true,
+		      action:true,
 		      succeed_info:false,
 		    };
 		  },
@@ -119,7 +119,7 @@
 				    clearInterval(timer);
 				    // 手动清除 Toast
 				    vant.Toast.clear();
-					this.see = false;
+					this.action = false;
 					this.succeed_info = true;
 
 				  }
@@ -131,6 +131,8 @@
 			},
 			hidePopup() {
 			  this.show = false;
+			  this.action = true;
+			  this.succeed_info = false;
 			},
 
 		},
