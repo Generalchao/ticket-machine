@@ -35,7 +35,10 @@
 		  	<div class="close_btn" @click="hidePopup"><img src="img/back.svg">返回首页</div>
 		  	<p class="name2">嘉定工人文化宫</p>
 		  </div>
-		  <van-row type="flex" justify="center"> 
+
+
+		  <!-- 扫描二维码+手动输入操作内容 -->
+		  <van-row type="flex" justify="center" v-show="see"> 
 		  	<van-col span="8">
 		  		<p class="title">方式一：</p>
 		  		<p class="sub_title">扫描二维码取票</p>
@@ -56,9 +59,19 @@
 				  theme="custom"
 				  extra-key="."
 				  close-button-text="完成"
+				  @blur="onConfirm"
 				/>
 		  	</van-col>
 		  </van-row>
+
+
+		  <!-- 影票打印成功提示内容 -->
+		  <div class="succeed_info" v-show="succeed_info">
+		  	<img src="img/done.svg">
+		  	<p>电影票打印成功</p>
+		  	<p class="desc">请在出口取票</p>
+		  	<img class="pic" src="img/展示出票区@2x.png">	
+		  </div>
 
 
 		</van-popup>
@@ -83,16 +96,43 @@
 		      show:false,
 		      show2:true,
 		      value:'',
+		      see:true,
+		      succeed_info:false,
 		    };
 		  },
 
 		methods: {
-		showPopup() {
-		  this.show = true;
-		},
-		hidePopup() {
-		  this.show = false;
-		},
+			
+			onConfirm() {
+				const toast = vant.Toast.loading({
+				  duration: 0, // 持续展示 toast
+				  forbidClick: true,
+				  message: '正在出票，请稍等',
+				});
+
+				let second = 3;
+				const timer = setInterval(() => {
+				  second--;
+				  if (second) {
+				    toast.message = `正在出票 ${second} /3`;
+				  } else {
+				    clearInterval(timer);
+				    // 手动清除 Toast
+				    vant.Toast.clear();
+					this.see = false;
+					this.succeed_info = true;
+
+				  }
+				}, 1000);
+			},
+
+			showPopup() {
+			  this.show = true;
+			},
+			hidePopup() {
+			  this.show = false;
+			},
+
 		},
 
 		});

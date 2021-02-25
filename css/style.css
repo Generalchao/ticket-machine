@@ -22,4 +22,17 @@ align-items: center;display: flex;cursor: pointer;}
 .van-key.van-key--large{height: auto;}
 .van-key--large{right: 16px;bottom: 16px;}
 .van-number-keyboard{padding-bottom: 0;background-color: transparent;}
+<<<<<<< Updated upstream
 .van-number-keyboard__body{padding:0;}
+=======
+.van-number-keyboard__body{padding:0;}
+
+.succeed_info{text-align: center;padding-top: 60px;}
+.succeed_info p{font-size: 40px;font-weight: 600;padding-top: 40px;color: #333;}
+.succeed_info p.desc{font-size: 32px;margin-top:12px;font-weight: 400;padding-top: 0; }
+.succeed_info .pic{width: 60%;padding-top: 60px;}
+
+.van-toast{width: 288px;min-height: 288px;font-size: 40px;line-height: 44px;border-radius: 16px;}
+.van-loading__spinner{width: 80px;height: 80px;}
+.van-toast__text{margin-top: 26px;}
+>>>>>>> Stashed changes
