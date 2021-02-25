@@ -22,9 +22,6 @@ align-items: center;display: flex;cursor: pointer;}
 .van-key.van-key--large{height: auto;}
 .van-key--large{right: 16px;bottom: 16px;}
 .van-number-keyboard{padding-bottom: 0;background-color: transparent;}
-<<<<<<< Updated upstream
-.van-number-keyboard__body{padding:0;}
-=======
 .van-number-keyboard__body{padding:0;}
 
 .succeed_info{text-align: center;padding-top: 60px;}
@@ -35,4 +32,3 @@ align-items: center;display: flex;cursor: pointer;}
 .van-toast{width: 288px;min-height: 288px;font-size: 40px;line-height: 44px;border-radius: 16px;}
 .van-loading__spinner{width: 80px;height: 80px;}
 .van-toast__text{margin-top: 26px;}
->>>>>>> Stashed changes
