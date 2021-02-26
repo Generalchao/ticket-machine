@@ -32,3 +32,7 @@ align-items: center;display: flex;cursor: pointer;}
 .van-toast{width: 288px;min-height: 288px;font-size: 40px;line-height: 44px;border-radius: 16px;}
 .van-loading__spinner{width: 80px;height: 80px;}
 .van-toast__text{margin-top: 26px;}
+
+.van-swipe__indicator{width: 28px;height: 28px;}
+.van-swipe__indicator:not(:last-child){margin-right: 22px;}
+.van-swipe__indicators{bottom:24px;}

@@ -18,11 +18,14 @@
 </head>
 <body>
 	<div  class="content_box" id="app">
-		<van-swipe :autoplay="5000">
+
+		<!-- 首页轮播图模块 轮播图推荐尺寸1080*1545,-->
+		<van-swipe :autoplay="4000">
 		  <van-swipe-item v-for="(image, index) in images" :key="index">
 		    <img class="movie_img" :src="image" />
 		  </van-swipe-item>
 		</van-swipe>
+		<!-- 首页轮播图模块 -->
 
 		<div class="action_area">
 			<van-button round type="info" color="#F65656" class="btn" @click="showPopup">取票</van-button>
@@ -63,6 +66,7 @@
 				/>
 		  	</van-col>
 		  </van-row>
+		  <!-- 扫描二维码+手动输入操作内容 -->
 
 
 		  <!-- 影票打印成功提示内容 -->
@@ -72,6 +76,7 @@
 		  	<p class="desc">请在出口取票</p>
 		  	<img class="pic" src="img/展示出票区@2x.png">	
 		  </div>
+		  <!-- 影票打印成功提示内容 -->
 
 
 		</van-popup>
@@ -92,6 +97,7 @@
 		      images: [
 		        'img/lihuanying@2x.jpg',
 		        'img/tangrenjie@2x.jpg',
+		        'img/renchaoxiongyong@2x.jpg',
 		      ],
 		      show:false,
 		      show2:true,
@@ -102,7 +108,9 @@
 		  },
 
 		methods: {
-			
+
+
+			// 手动输入提交出票
 			onConfirm() {
 				const toast = vant.Toast.loading({
 				  duration: 0, // 持续展示 toast
@@ -126,14 +134,19 @@
 				}, 1000);
 			},
 
+
+			// 向上推出操作抽屉
 			showPopup() {
 			  this.show = true;
 			},
+
+			// 关闭抽屉返回首页
 			hidePopup() {
 			  this.show = false;
 			  this.action = true;
 			  this.succeed_info = false;
 			},
+
 
 		},
 
